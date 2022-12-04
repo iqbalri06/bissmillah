@@ -103,7 +103,8 @@ class login:
 			time.sleep(2);login().__login__()
 		else:
 			try:
-				cc = requests.get('https://graph.facebook.com/me?fields=id,name&access_token='+tokenku[0], cookies={'cookie':kukis})
+				cc = requests.get('https://graph.facebook.com/me?fields=id,name&access_token='%(token)).json()['name']
+				open('token.x','w').write(token'h)
 				print('\n [%s+%s] Login berhasil %s'%(H,N,cc))
 				self.bot()
 			except KeyError:
